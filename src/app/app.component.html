@@ -1,0 +1,23 @@
+<div>
+  <button (click)="onSize('large')">Large</button>
+  <button (click)="onSize('medium')">Medium</button>
+  <button (click)="onSize('small')">Small</button>
+</div>
+<br />
+<div class="{{ size }}">
+  <gridster #outerGrid [options]="options">
+    <gridster-item *ngFor="let item of dashboard" [item]="item">
+      <div class="gridster-item">
+        <gridster #innerGrid *ngIf="item.dashboard" [options]="options">
+          <gridster-item
+            *ngFor="let subItem of item.dashboard"
+            [item]="subItem"
+          >
+            <div class="gridster-item">&nbsp;</div>
+          </gridster-item>
+        </gridster>
+      </div>
+    </gridster-item>
+  </gridster>
+</div>
+<router-outlet></router-outlet>
