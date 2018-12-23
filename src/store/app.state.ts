@@ -4,6 +4,7 @@ export interface LayoutSection {
   cols: number;
   x: number;
   y: number;
+  order: number;
   payload?: any;
 }
 
@@ -17,8 +18,8 @@ export interface Layout {
   id: 100,
   name: "two_col_layout_hz",
   sections: [
-    { id: 1, rows: 1, cols: 1, x: 0, y: 0 },
-    { id: 2, rows: 1, cols: 1, x: 1, y: 0 }
+    { id: 1, rows: 1, cols: 1, x: 0, y: 0, order: 1 },
+    { id: 2, rows: 1, cols: 1, x: 1, y: 0, order: 2 }
   ]
 };
 
@@ -26,9 +27,9 @@ const three_col_layout_hz: Layout = {
   id: 101,
   name: "three_col_layout_hz",
   sections: [
-    { id: 1, rows: 1, cols: 1, x: 0, y: 0 },
-    { id: 2, rows: 1, cols: 1, x: 1, y: 0 },
-    { id: 3, rows: 1, cols: 1, x: 2, y: 0 }
+    { id: 1, rows: 1, cols: 1, x: 0, y: 0, order: 1 },
+    { id: 2, rows: 1, cols: 1, x: 1, y: 0, order: 2 },
+    { id: 3, rows: 1, cols: 1, x: 2, y: 0, order: 3 }
   ]
 };
  */
@@ -121,7 +122,7 @@ export const state2 = {
         id: 100,
         name: "Default workspace",
         layout: {
-          id: 100,
+          id: 10,
           sections: [
             { id: 1, payload: { bookmarkId: 124523, chartId: null } },
             { id: 2, payload: { bookmarkId: 124523, chartId: 145 } }
@@ -130,7 +131,7 @@ export const state2 = {
       },
       { id: 101, name: "Personal workspace" }
     ],
-    entity: { id: 100, name: "Default workspace" },
+    selectedEntityId: 100,
     loading: false,
     loaded: false
   },
@@ -153,11 +154,31 @@ export const state2 = {
     loaded: false
   },
   layouts: {
-    entities: [],
+    entities: [
+      {
+        id: 100,
+        name: "two_col_layout_hz",
+        sections: [
+          { id: 1, rows: 1, cols: 1, x: 0, y: 0, order: 1 },
+          { id: 2, rows: 1, cols: 1, x: 1, y: 0, order: 2 }
+        ]
+      },
+      {
+        id: 101,
+        name: "three_col_layout_hz",
+        sections: [
+          { id: 1, rows: 1, cols: 1, x: 0, y: 0, order: 1 },
+          { id: 2, rows: 1, cols: 1, x: 1, y: 0, order: 2 },
+          { id: 3, rows: 1, cols: 1, x: 2, y: 0, order: 3 }
+        ]
+      }
+    ],
     loaded: false,
     loading: false
   },
-  bookmarks: {}
+  bookmarks: {
+    entities: [{}]
+  }
 };
 
 // new workspace
