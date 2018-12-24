@@ -12,8 +12,9 @@ import { ClientsComponent } from "./search/clients/clients.component";
 import { FundsComponent } from "./search/funds/funds.component";
 import { IndicesComponent } from "./search/indices/indices.component";
 import { DatesComponent } from "./search/dates/dates.component";
-import { LayoutComponent } from './layout/layout.component';
-import { LayoutSectionComponent } from './layout/layout-section/layout-section.component';
+import { LayoutComponent } from "./layout/layout.component";
+import { LayoutSectionComponent } from "./layout/layout-section/layout-section.component";
+import { NavigationComponent } from "./navigation/navigation.component";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LayoutSectionComponent } from './layout/layout-section/layout-section.c
     IndicesComponent,
     DatesComponent,
     LayoutComponent,
-    LayoutSectionComponent
+    LayoutSectionComponent,
+    NavigationComponent
   ],
   imports: [
     CommonModule,

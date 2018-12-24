@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "highchart"
+    redirectTo: "analytics"
   },
   { path: "gridster", component: GridsterAppComponent },
   { path: "highchart", component: HighchartAppComponent },
